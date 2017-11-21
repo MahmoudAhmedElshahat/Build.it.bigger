@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="pharaoh.com.jokeviewer.JokeActivity">
+
+    <TextView
+        android:id="@+id/joke_content"
+        android:layout_width="match_parent"
+        android:text="intial Joke :) "
+        android:gravity="center_horizontal"
+        android:textSize="28sp"
+        android:background="#ccc"
+        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>
