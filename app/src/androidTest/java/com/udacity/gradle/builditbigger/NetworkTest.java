@@ -2,23 +2,23 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
-import android.test.ActivityUnitTestCase;
+import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
+
+import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created by MahmoudAhmed on 11/19/2017.
  */
-public class NetworkTest extends ActivityUnitTestCase{
+@RunWith(AndroidJUnit4.class)
+public class NetworkTest {
 
     Context context;
-
-    public NetworkTest(Class activityClass) {
-        super(activityClass);
-    }
 
     @Test
     public void testNetworking() throws Throwable {
@@ -31,7 +31,6 @@ public class NetworkTest extends ActivityUnitTestCase{
 
             @Override
             protected void onPostExecute(String result) {
-                super.onPostExecute(result);
                 assertNotNull(result);
                 if(result == null )
                     return;
@@ -41,9 +40,7 @@ public class NetworkTest extends ActivityUnitTestCase{
             }
         };
         network.execute(context);
-
         signal.await();
-        signal.await(10, TimeUnit.SECONDS);
     }
 
 
